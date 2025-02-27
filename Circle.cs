@@ -16,10 +16,12 @@ namespace Lab5
             if (newRadius < 0)
             {
                 //throw exception
+                throw new InvalidRadiusException(newRadius);
             }
             else if (newRadius > MAX_RADIUS)
             {
                 // throw exception
+                throw new InvalidRadiusException(newRadius, MAX_RADIUS);
             }
             else
             {
