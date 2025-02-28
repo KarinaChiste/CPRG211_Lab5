@@ -8,14 +8,15 @@ namespace Lab5
 {
     public class InvalidRadiusException: Exception
     {
-        public InvalidRadiusException(double radius)
+        public InvalidRadiusException(double radius) : base($"Invalid radius {radius}: must be non-negative")
         {
-            string Message = $"Invalid radius {radius}: must be non-negative";
+            //string Message = $"Invalid radius {radius}: must be non-negative";
+            
         }
 
-        public InvalidRadiusException(double radius, double maxRadius)
+        public InvalidRadiusException(double radius, double maxRadius): base($"Invalid radius {radius}: must be between 0 and {maxRadius}")
         {
-            string Message = $"Invalid radius {radius}: must be between 0 and {maxRadius}";
+            //string Message = $"Invalid radius {radius}: must be between 0 and {maxRadius}";
         }
     }
 }

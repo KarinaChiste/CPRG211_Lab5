@@ -1,10 +1,30 @@
 ﻿namespace Lab5
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        static void MakeCircle(double radius)
         {
-            Console.WriteLine("Hello, World!");
+            try
+            {
+                Circle circ = new Circle(radius);
+                Console.WriteLine(circ.ToString());
+                
+            }
+            catch (InvalidRadiusException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+        
+        static void Main()
+        {
+            MakeCircle(25);
+            MakeCircle(-20);
+            MakeCircle(20);
+            MakeCircle(10);
+            MakeCircle(0);
         }
     }
 }
+
